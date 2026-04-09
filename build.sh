@@ -27,11 +27,14 @@ CERTEOF
 openssl req -x509 -newkey rsa:2048 -keyout /tmp/key.pem \
   -out /tmp/cert.pem -days 3650 -nodes -config /tmp/cert.cfg
 
-openssl pkcs12 -export -out /tmp/cert.p12 \
-  -inkey /tmp/key.pem -in /tmp/cert.pem -passout pass:""
+openssl pkcs12 -legacy -export -out /tmp/cert.p12 \
+  -inkey /tmp/key.pem -in /tmp/cert.pem -passout pass:temp1234
 
 security import /tmp/cert.p12 -k ~/Library/Keychains/login.keychain-db \
-  -P "" -T /usr/bin/codesign -A
+  -P "temp1234" -T /usr/bin/codesign -A
+
+security add-trusted-cert -d -r trustRoot \
+  -k ~/Library/Keychains/login.keychain-db /tmp/cert.pem
 
 echo "✍️ 앱 서명 중..."
 codesign --force --deep --sign "${IDENTITY}" "${APP_PATH}"
