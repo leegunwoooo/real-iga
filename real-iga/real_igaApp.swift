@@ -1,17 +1,15 @@
-//
-//  real_igaApp.swift
-//  real-iga
-//
-//  Created by 이건우 on 4/9/26.
-//
-
 import SwiftUI
 
 @main
 struct real_igaApp: App {
+    
+    @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
     var body: some Scene {
-        WindowGroup {
-            ContentView()
+        MenuBarExtra("real-iga", systemImage: "keyboard") {
+            Button("종료") { NSApplication.shared.terminate(nil) }
         }
     }
 }
+
+
