@@ -6,7 +6,12 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		3809D1732F8761CB002F1B75 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 3809D1712F8761C1002F1B75 /* README.md */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
+		3809D1712F8761C1002F1B75 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		38212A5E2F873F960050C525 /* real-iga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "real-iga.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -32,6 +37,7 @@
 		38212A552F873F960050C525 = {
 			isa = PBXGroup;
 			children = (
+				3809D1712F8761C1002F1B75 /* README.md */,
 				38212A602F873F960050C525 /* real-iga */,
 				38212A5F2F873F960050C525 /* Products */,
 			);
@@ -109,6 +115,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3809D1732F8761CB002F1B75 /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

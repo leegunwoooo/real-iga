@@ -14,6 +14,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         let options = [kAXTrustedCheckOptionPrompt.takeUnretainedValue() as String: true]
         let trusted = AXIsProcessTrustedWithOptions(options as CFDictionary)
 
+
         let eventMask = CGEventMask(1 << CGEventType.keyDown.rawValue)
 
         eventTap = CGEvent.tapCreate(
